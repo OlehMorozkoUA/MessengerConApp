@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Models.Classes;
 using Handlers.Classes;
+using Models.Interfaces;
 
 namespace MessengerConApp
 {
@@ -18,10 +19,41 @@ namespace MessengerConApp
                 List<Message> messages = Services<Message>.ToList(MessengerDb.Messages);
                 List<User> users = Services<User>.ToList(MessengerDb.Users);
 
-                var conversation = from u in users
-                                   select u;
+                User currentUser = users[0];
+                int FromUserId = currentUser.Id;
+                int ToDetinationId = 2;
 
-                foreach (var u in conversation) Console.WriteLine(u.Id);
+                IEnumerable<User> UsersInTheDiscussion = from user in users
+                                                         where user.Id == FromUserId || 
+                                                               user.Id == ToDetinationId
+                                                         select user;
+                var conversation = from message in messages
+                                   from user in UsersInTheDiscussion
+                                   where message.FromUserId == user.Id &&
+                                         message.Destination == Destination.User
+                                   select new
+                                   {
+                                       Id = message.Id,
+                                       UserId = user.Id,
+                                       CreationTime = message.CreationTime,
+                                       Text = message.Text,
+                                       ImagePath = user.ImagePath,
+                                       FirstName = user.FirstName,
+                                       LastName = user.LastName,
+                                       Email = user.Email,
+                                       Status = Status.User
+                                   };
+
+                foreach (var m in conversation)
+                {
+                    Console.WriteLine("===================================");
+                    Console.WriteLine($"{m.ImagePath}");
+                    Console.WriteLine($"{m.CreationTime}");
+                    Console.WriteLine($"{m.FirstName} {m.LastName}({m.Status})");
+                    Console.WriteLine($"{m.Email}");
+                    Console.WriteLine($"{m.Text}");
+                    Console.WriteLine("===================================");
+                }
             }
             Console.ReadKey();
         }
