@@ -41,7 +41,10 @@ namespace MessengerConApp
                                        FirstName = user.FirstName,
                                        LastName = user.LastName,
                                        Email = user.Email,
-                                       Status = Status.User
+                                       Status = Status.User,
+                                       Attarhcments = (from attachment in attachments 
+                                                      where attachment.MessageId == message.Id 
+                                                      select attachment)
                                    };
 
                 foreach (var m in conversation)
@@ -52,6 +55,7 @@ namespace MessengerConApp
                     Console.WriteLine($"{m.FirstName} {m.LastName}({m.Status})");
                     Console.WriteLine($"{m.Email}");
                     Console.WriteLine($"{m.Text}");
+                    Console.WriteLine((m.Attarhcments.Count() > 0) ? m.Attarhcments.First().Value : "");
                     Console.WriteLine("===================================");
                 }
             }
