@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessengerConApp", "MessengerConApp\MessengerConApp.csproj", "{35108FD2-A2BF-42A0-90FD-2A027B12F5BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{965D1FFB-FEC3-4962-B84A-948FD44B8981}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Handlers", "Handlers\Handlers.csproj", "{5A28FF13-257C-418E-B000-BCB17E592AFF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{35108FD2-A2BF-42A0-90FD-2A027B12F5BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35108FD2-A2BF-42A0-90FD-2A027B12F5BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35108FD2-A2BF-42A0-90FD-2A027B12F5BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35108FD2-A2BF-42A0-90FD-2A027B12F5BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{965D1FFB-FEC3-4962-B84A-948FD44B8981}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{965D1FFB-FEC3-4962-B84A-948FD44B8981}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{965D1FFB-FEC3-4962-B84A-948FD44B8981}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{965D1FFB-FEC3-4962-B84A-948FD44B8981}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A28FF13-257C-418E-B000-BCB17E592AFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A28FF13-257C-418E-B000-BCB17E592AFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A28FF13-257C-418E-B000-BCB17E592AFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A28FF13-257C-418E-B000-BCB17E592AFF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DA219A03-E2CD-45B5-BB2C-C4F8C20C1836}
+	EndGlobalSection
+EndGlobal

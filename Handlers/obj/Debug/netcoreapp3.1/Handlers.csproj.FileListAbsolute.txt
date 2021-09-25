@@ -1,0 +1,10 @@
+C:\Users\rezer\Desktop\Eleks\MessengerConApp\Handlers\bin\Debug\netcoreapp3.1\Handlers.deps.json
+C:\Users\rezer\Desktop\Eleks\MessengerConApp\Handlers\bin\Debug\netcoreapp3.1\Handlers.dll
+C:\Users\rezer\Desktop\Eleks\MessengerConApp\Handlers\bin\Debug\netcoreapp3.1\Handlers.pdb
+C:\Users\rezer\Desktop\Eleks\MessengerConApp\Handlers\obj\Debug\netcoreapp3.1\Handlers.csproj.AssemblyReference.cache
+C:\Users\rezer\Desktop\Eleks\MessengerConApp\Handlers\obj\Debug\netcoreapp3.1\Handlers.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rezer\Desktop\Eleks\MessengerConApp\Handlers\obj\Debug\netcoreapp3.1\Handlers.AssemblyInfoInputs.cache
+C:\Users\rezer\Desktop\Eleks\MessengerConApp\Handlers\obj\Debug\netcoreapp3.1\Handlers.AssemblyInfo.cs
+C:\Users\rezer\Desktop\Eleks\MessengerConApp\Handlers\obj\Debug\netcoreapp3.1\Handlers.csproj.CoreCompileInputs.cache
+C:\Users\rezer\Desktop\Eleks\MessengerConApp\Handlers\obj\Debug\netcoreapp3.1\Handlers.dll
+C:\Users\rezer\Desktop\Eleks\MessengerConApp\Handlers\obj\Debug\netcoreapp3.1\Handlers.pdb
