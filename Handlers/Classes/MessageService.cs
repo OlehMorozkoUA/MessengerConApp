@@ -2,12 +2,8 @@
 
 namespace Handlers.Classes
 {
-    public class MessageService
+    public static class MessageService
     {
-        public MessengerDbContext DbContext { get; set; }
-        public MessageService(MessengerDbContext dbContext)
-        {
-            DbContext = dbContext;
-        }
+        public static MessengerDbContext DbContext { get; set; } = new MessengerDbContext();
     }
 }
