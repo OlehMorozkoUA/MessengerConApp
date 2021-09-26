@@ -59,6 +59,21 @@ namespace MessengerConApp
                     Console.WriteLine("===================================");
                 }
             }
+
+            /*UserService.Create(new User()
+            {
+                Login = "login4",
+                Password = "p4",
+                Email = "e4",
+                FirstName = "f4",
+                LastName = "l4",
+                Birthday = DateTime.Now,
+                ImagePath = "i4",
+                Status = Status.User,
+                ActiveLogin = true
+            });*/
+            //UserService.Delete(2003);
+            UserService.Update(3, new { FirstName="firstname" });
             Console.ReadKey();
         }
     }
