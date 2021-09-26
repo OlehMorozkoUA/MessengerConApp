@@ -1,12 +1,14 @@
-﻿using Models.Classes;
+﻿using Handlers.Interfaces;
+using Models.Classes;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
 
 namespace Handlers.Classes
 {
-    public static class UserService
+    public class UserService : ICRUD<User>
     {
+        private UserService() { }
         private static bool CreateUser(MessengerDbContext MessengerDb, User user)
         {
             try
@@ -60,8 +62,6 @@ namespace Handlers.Classes
                 return false;
             }
         }
-
-        private static void UpdateUser(ref dynamic value, dynamic newValue) => value = newValue;
         private static bool DeleteUser(MessengerDbContext MessengerDb, int id)
         {
             try
@@ -84,14 +84,6 @@ namespace Handlers.Classes
         {
             using (MessengerDbContext MessengerDb = new MessengerDbContext())
                 return func(MessengerDb);
-        }
-        public static void CreateUser(User user)
-        {
-            using (MessengerDbContext MessengerDb = new MessengerDbContext())
-            {
-                MessengerDb.Add(user);
-                MessengerDb.SaveChanges();
-            }
         }
     }
 }
