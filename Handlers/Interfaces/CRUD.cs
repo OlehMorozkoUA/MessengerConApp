@@ -85,5 +85,10 @@ namespace Handlers.Interfaces
                 "user" => MessengerDb.Users as IEnumerable<T>,
                 _ => null
             };
+        public static dynamic Transaction(Func<MessengerDbContext, object> func)
+        {
+            using (MessengerDbContext MessengerDb = new MessengerDbContext())
+                return func(MessengerDb);
+        }
     }
 }
