@@ -12,10 +12,5 @@ namespace Handlers.Classes
         public static List<User> Read() => Transaction((MessengerDb) => ReadEntity(MessengerDb));
         public static bool Update(int id, object newUser) => Transaction((MessengerDb) => UpdateEntity(MessengerDb, id, newUser));
         public static bool Delete(int id) => Transaction((MessengerDb) => DeleteEntity(MessengerDb, id));
-        public static dynamic Transaction(Func<MessengerDbContext, object> func)
-        {
-            using (MessengerDbContext MessengerDb = new MessengerDbContext())
-                return func(MessengerDb);
-        }
     }
 }
