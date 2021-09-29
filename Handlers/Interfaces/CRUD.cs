@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Handlers.Interfaces
 {
-    public class CRUD<T> where T: class
+    public class CRUD<T> : ICRUD<T> where T: class
     {
         protected static bool CreateEntity(MessengerDbContext MessengerDb, T entity)
         {
@@ -17,7 +17,7 @@ namespace Handlers.Interfaces
                 MessengerDb.SaveChanges();
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -30,7 +30,7 @@ namespace Handlers.Interfaces
                 IEnumerable<T> MessengerDbEntities = GetMessengerDbEntities(MessengerDb, typeof(T).Name.ToLower());
                 entities = Services<T>.ToList(MessengerDbEntities);
             }
-            catch (Exception ex) { }
+            catch (Exception) { }
 
             return entities;
         }
@@ -57,7 +57,7 @@ namespace Handlers.Interfaces
                 MessengerDb.SaveChanges();
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -71,7 +71,7 @@ namespace Handlers.Interfaces
                 MessengerDb.SaveChanges();
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -90,5 +90,10 @@ namespace Handlers.Interfaces
             using (MessengerDbContext MessengerDb = new MessengerDbContext())
                 return func(MessengerDb);
         }
+
+        public static bool Create(T entity) => Transaction((MessengerDb) => CreateEntity(MessengerDb, entity));
+        public static List<T> Read() => Transaction((MessengerDb) => ReadEntity(MessengerDb));
+        public static bool Update(int id, object newEntity) => Transaction((MessengerDb) => UpdateEntity(MessengerDb, id, newEntity));
+        public static bool Delete(int id) => Transaction((MessengerDb) => DeleteEntity(MessengerDb, id));
     }
 }

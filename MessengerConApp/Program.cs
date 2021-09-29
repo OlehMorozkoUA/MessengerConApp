@@ -73,7 +73,9 @@ namespace MessengerConApp
                 ActiveLogin = true
             });*/
             //UserService.Delete(2003);
-            UserService.Update(3, new { FirstName="firstname-12" });
+            UserService.Update(3, new { FirstName="firstname-12345" });
+            //List<User> users1 = UserService.Read();
+            //Console.WriteLine(users1.Count);
             Console.ReadKey();
         }
     }
